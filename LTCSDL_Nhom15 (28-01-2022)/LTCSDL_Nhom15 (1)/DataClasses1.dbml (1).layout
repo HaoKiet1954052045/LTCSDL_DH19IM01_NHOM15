@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses1">
+  <DataContextMoniker Name="/DataClasses1DataContext" />
+  <nestedChildShapes>
+    <classShape Id="50e9a4cc-ca67-460b-8b4b-941929e9c74f" absoluteBounds="0.5, 2, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DataClasses1DataContext/T1_Bảng_Loại_Bánh" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a4eeb3bd-9ac1-4863-a3d4-8398b1f1e0f2" absoluteBounds="0.51500000000000012, 2.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bada41d7-e8e1-4828-9990-67dbc95ba185" absoluteBounds="4.5, 1.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClasses1DataContext/T2_Bảng_Bánh" />
+      <nestedChildShapes>
+        <elementListCompartment Id="323cdb1b-5886-4ede-a10a-3ff1b1e62631" absoluteBounds="4.5150000000000006, 2.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 2.76369466145833); (4.19791666666667 : 2.76369466145833 : JumpStart); (4.36458333333333 : 2.76369466145833 : JumpEnd); (4.5 : 2.76369466145833)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/T1_Bảng_Loại_Bánh/T1_Bảng_Loại_Bánh_T2_Bảng_Bánh" />
+      <nodes>
+        <classShapeMoniker Id="50e9a4cc-ca67-460b-8b4b-941929e9c74f" />
+        <classShapeMoniker Id="bada41d7-e8e1-4828-9990-67dbc95ba185" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="cf35f7bb-2aaa-4d21-aef3-73ba98b74e46" absoluteBounds="3, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DataClasses1DataContext/T3_Bảng_KH" />
+      <nestedChildShapes>
+        <elementListCompartment Id="95c2ace3-50c5-4393-817f-444fdac6a7e5" absoluteBounds="3.015, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="61c22c5b-1295-4962-a456-99e6990155cc" absoluteBounds="0.5, 3.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataClasses1DataContext/T4_Bảng_NV" />
+      <nestedChildShapes>
+        <elementListCompartment Id="732e4c5d-259d-4629-842f-cafa99675bdc" absoluteBounds="0.51500000000000012, 3.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="26c85c57-5b0f-4753-a971-38d0ecb0b91e" absoluteBounds="4.125, 4.25, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataClasses1DataContext/T5_hóa_đơn" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3c541574-d156-491a-a343-49aa9e7ebec4" absoluteBounds="4.1400000000000006, 4.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.3125 : 3.32859537760417); (5.3125 : 4.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/T2_Bảng_Bánh/T2_Bảng_Bánh_T5_hóa_đơn" />
+      <nodes>
+        <classShapeMoniker Id="bada41d7-e8e1-4828-9990-67dbc95ba185" />
+        <classShapeMoniker Id="26c85c57-5b0f-4753-a971-38d0ecb0b91e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.28125 : 2.27089680989583); (4.28125 : 4.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/T3_Bảng_KH/T3_Bảng_KH_T5_hóa_đơn" />
+      <nodes>
+        <classShapeMoniker Id="cf35f7bb-2aaa-4d21-aef3-73ba98b74e46" />
+        <classShapeMoniker Id="26c85c57-5b0f-4753-a971-38d0ecb0b91e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 4.95274983723958); (4.125 : 4.95274983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/T4_Bảng_NV/T4_Bảng_NV_T5_hóa_đơn" />
+      <nodes>
+        <classShapeMoniker Id="61c22c5b-1295-4962-a456-99e6990155cc" />
+        <classShapeMoniker Id="26c85c57-5b0f-4753-a971-38d0ecb0b91e" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

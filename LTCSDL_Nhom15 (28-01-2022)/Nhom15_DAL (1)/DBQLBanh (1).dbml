@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLyBanh" Class="DBQLBanhDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-TFUTKAM\SQLEXPRESS;Initial Catalog=QuanLyBanh;Integrated Security=True" SettingsObjectName="Nhom15_DAL.Properties.Settings" SettingsPropertyName="QuanLyBanhConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BanhCookie" Member="BanhCookies">
+    <Type Name="BanhCookie">
+      <Column Name="MaBanh" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenBanh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GiaTien" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="BanhCookie_HoaDon" Member="HoaDons" ThisKey="MaBanh" OtherKey="MaBanhCookie" Type="HoaDon" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NhanVien" Member="NhanViens">
+    <Type Name="NhanVien">
+      <Column Name="MaNhanVien" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SoDienThoai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ChucVu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TenDangNhap" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MatKhau" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="NhanVien_HoaDon" Member="HoaDons" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="HoaDon" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BanhMan" Member="BanhMans">
+    <Type Name="BanhMan">
+      <Column Name="MaBanh" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenBanh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GiaTien" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="BanhMan_HoaDon" Member="HoaDons" ThisKey="MaBanh" OtherKey="MaBanhMan" Type="HoaDon" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BanhNgot" Member="BanhNgots">
+    <Type Name="BanhNgot">
+      <Column Name="MaBanh" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenBanh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GiaTien" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="BanhNgot_HoaDon" Member="HoaDons" ThisKey="MaBanh" OtherKey="MaBanhNgot" Type="HoaDon" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HoaDon" Member="HoaDons">
+    <Type Name="HoaDon">
+      <Column Name="MaHoaDon" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaKhachHang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaNhanVien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaBanhMan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoLuongBanhMan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaBanhNgot" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoLuongBanhNgot" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaBanhCookie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoLuongBanhCookie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayMuaHang" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TongTien" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="BanhCookie_HoaDon" Member="BanhCookie" ThisKey="MaBanhCookie" OtherKey="MaBanh" Type="BanhCookie" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="BanhMan_HoaDon" Member="BanhMan" ThisKey="MaBanhMan" OtherKey="MaBanh" Type="BanhMan" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="BanhNgot_HoaDon" Member="BanhNgot" ThisKey="MaBanhNgot" OtherKey="MaBanh" Type="BanhNgot" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="NhanVien_HoaDon" Member="NhanVien" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="NhanVien" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="KhachHang_HoaDon" Member="KhachHang" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="KhachHang" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhachHang" Member="KhachHangs">
+    <Type Name="KhachHang">
+      <Column Name="MaKhachHang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SoDienThoai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="KhachHang_HoaDon" Member="HoaDons" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="HoaDon" />
+    </Type>
+  </Table>
+  <Function Name="dbo.sua_BanhCookie" Method="sua_BanhCookie">
+    <Parameter Name="MaBanh" Parameter="maBanh" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TenBanh" Parameter="tenBanh" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="GiaTien" Parameter="giaTien" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.xoa_NhanVien" Method="xoa_NhanVien">
+    <Parameter Name="MaNhanVien" Parameter="maNhanVien" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sua_BanhMan" Method="sua_BanhMan">
+    <Parameter Name="MaBanh" Parameter="maBanh" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TenBanh" Parameter="tenBanh" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="GiaTien" Parameter="giaTien" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sua_BanhNgot" Method="sua_BanhNgot">
+    <Parameter Name="MaBanh" Parameter="maBanh" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TenBanh" Parameter="tenBanh" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="GiaTien" Parameter="giaTien" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sua_HoaDon" Method="sua_HoaDon">
+    <Parameter Name="MaHoaDon" Parameter="maHoaDon" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaKhachHang" Parameter="maKhachHang" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaNhanVien" Parameter="maNhanVien" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaBanhMan" Parameter="maBanhMan" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SoLuongBanhMan" Parameter="soLuongBanhMan" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaBanhNgot" Parameter="maBanhNgot" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SoLuongBanhNgot" Parameter="soLuongBanhNgot" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaBanhCookie" Parameter="maBanhCookie" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SoLuongBanhCookie" Parameter="soLuongBanhCookie" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NgayMuaHang" Parameter="ngayMuaHang" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sua_KhachHang" Method="sua_KhachHang">
+    <Parameter Name="MaKhachHang" Parameter="maKhachHang" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HoTen" Parameter="hoTen" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="NgaySinh" Parameter="ngaySinh" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="SoDienThoai" Parameter="soDienThoai" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="GioiTinh" Parameter="gioiTinh" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DiaChi" Parameter="diaChi" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sua_NhanVien" Method="sua_NhanVien">
+    <Parameter Name="MaNhanVien" Parameter="maNhanVien" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HoTen" Parameter="hoTen" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="NgaySinh" Parameter="ngaySinh" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="SoDienThoai" Parameter="soDienThoai" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="GioiTinh" Parameter="gioiTinh" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DiaChi" Parameter="diaChi" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ChucVu" Parameter="chucVu" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="TenDangNhap" Parameter="tenDangNhap" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="MatKhau" Parameter="matKhau" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.them_BanhMan" Method="them_BanhMan">
+    <Parameter Name="TenBanh" Parameter="tenBanh" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="GiaTien" Parameter="giaTien" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.them_HoaDon" Method="them_HoaDon">
+    <Parameter Name="MaKhachHang" Parameter="maKhachHang" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaNhanVien" Parameter="maNhanVien" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaBanhMan" Parameter="maBanhMan" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SoLuongBanhMan" Parameter="soLuongBanhMan" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaBanhNgot" Parameter="maBanhNgot" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SoLuongBanhNgot" Parameter="soLuongBanhNgot" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaBanhCookie" Parameter="maBanhCookie" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SoLuongBanhCookie" Parameter="soLuongBanhCookie" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.them_KhachHang" Method="them_KhachHang">
+    <Parameter Name="HoTen" Parameter="hoTen" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="NgaySinh" Parameter="ngaySinh" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="SoDienThoai" Parameter="soDienThoai" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="GioiTinh" Parameter="gioiTinh" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DiaChi" Parameter="diaChi" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.them_NhanVien" Method="them_NhanVien">
+    <Parameter Name="HoTen" Parameter="hoTen" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="NgaySinh" Parameter="ngaySinh" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="SoDienThoai" Parameter="soDienThoai" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="GioiTinh" Parameter="gioiTinh" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DiaChi" Parameter="diaChi" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ChucVu" Parameter="chucVu" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="TenDangNhap" Parameter="tenDangNhap" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="MatKhau" Parameter="matKhau" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.xoa_BanhCookie" Method="xoa_BanhCookie">
+    <Parameter Name="MaBanh" Parameter="maBanh" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.xoa_BanhMan" Method="xoa_BanhMan">
+    <Parameter Name="MaBanh" Parameter="maBanh" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.xoa_BanhNgot" Method="xoa_BanhNgot">
+    <Parameter Name="MaBanh" Parameter="maBanh" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.xoa_DonHang" Method="xoa_DonHang">
+    <Parameter Name="MaDonHang" Parameter="maDonHang" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.xoa_KhachHang" Method="xoa_KhachHang">
+    <Parameter Name="MaKhachHang" Parameter="maKhachHang" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.new_MaBanhCookie" Method="new_MaBanhCookie" IsComposable="true">
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.new_MaNhanVien" Method="new_MaNhanVien" IsComposable="true">
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.new_MaBanhMan" Method="new_MaBanhMan" IsComposable="true">
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.new_MaBanhNgot" Method="new_MaBanhNgot" IsComposable="true">
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.new_MaHoaDon" Method="new_MaHoaDon" IsComposable="true">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.new_MaKhachHang" Method="new_MaKhachHang" IsComposable="true">
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.them_BanhCookie" Method="them_BanhCookie">
+    <Parameter Name="TenBanh" Parameter="tenBanh" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="GiaTien" Parameter="giaTien" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.them_BanhNgot" Method="them_BanhNgot">
+    <Parameter Name="TenBanh" Parameter="tenBanh" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="GiaTien" Parameter="giaTien" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

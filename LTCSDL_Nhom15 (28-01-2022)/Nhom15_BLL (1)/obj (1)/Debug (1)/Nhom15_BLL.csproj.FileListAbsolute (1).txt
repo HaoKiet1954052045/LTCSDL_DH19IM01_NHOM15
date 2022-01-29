@@ -1,0 +1,15 @@
+C:\Users\lenovo\Desktop\LTCSDL\LTCSDL_Nhom15\Nhom15_BLL\bin\Debug\Nhom15_BLL.dll
+C:\Users\lenovo\Desktop\LTCSDL\LTCSDL_Nhom15\Nhom15_BLL\bin\Debug\Nhom15_BLL.pdb
+C:\Users\lenovo\Desktop\LTCSDL\LTCSDL_Nhom15\Nhom15_BLL\obj\Debug\Nhom15_BLL.csproj.CoreCompileInputs.cache
+C:\Users\lenovo\Desktop\LTCSDL\LTCSDL_Nhom15\Nhom15_BLL\obj\Debug\Nhom15_BLL.dll
+C:\Users\lenovo\Desktop\LTCSDL\LTCSDL_Nhom15\Nhom15_BLL\obj\Debug\Nhom15_BLL.pdb
+E:\LTCSDL\LTCSDL_Nhom15\Nhom15_BLL\bin\Debug\Nhom15_BLL.dll
+E:\LTCSDL\LTCSDL_Nhom15\Nhom15_BLL\bin\Debug\Nhom15_BLL.pdb
+E:\LTCSDL\LTCSDL_Nhom15\Nhom15_BLL\bin\Debug\Nhom15_DAL.dll
+E:\LTCSDL\LTCSDL_Nhom15\Nhom15_BLL\bin\Debug\Nhom15_DAL.pdb
+E:\LTCSDL\LTCSDL_Nhom15\Nhom15_BLL\bin\Debug\Nhom15_DAL.dll.config
+E:\LTCSDL\LTCSDL_Nhom15\Nhom15_BLL\obj\Debug\Nhom15_BLL.csproj.AssemblyReference.cache
+E:\LTCSDL\LTCSDL_Nhom15\Nhom15_BLL\obj\Debug\Nhom15_BLL.csproj.CoreCompileInputs.cache
+E:\LTCSDL\LTCSDL_Nhom15\Nhom15_BLL\obj\Debug\Nhom15_BLL.csproj.CopyComplete
+E:\LTCSDL\LTCSDL_Nhom15\Nhom15_BLL\obj\Debug\Nhom15_BLL.dll
+E:\LTCSDL\LTCSDL_Nhom15\Nhom15_BLL\obj\Debug\Nhom15_BLL.pdb

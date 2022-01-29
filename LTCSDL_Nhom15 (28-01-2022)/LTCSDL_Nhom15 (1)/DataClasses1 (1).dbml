@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLyBanBanh" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LANVY-LENOVO\SQLEXPRESS01;Initial Catalog=QuanLyBanBanh;Integrated Security=True" SettingsObjectName="LTCSDL_Nhom15.Properties.Settings" SettingsPropertyName="QuanLyBanBanhConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[T1_Bảng Loại Bánh]" Member="T1_Bảng_Loại_Bánhs">
+    <Type Name="T1_Bảng_Loại_Bánh">
+      <Column Name="[Mã LB]" Member="Mã_LB" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Tên" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="T1_Bảng_Loại_Bánh_T2_Bảng_Bánh" Member="T2_Bảng_Bánhs" ThisKey="Mã_LB" OtherKey="Mã_LB" Type="T2_Bảng_Bánh" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[T2_Bảng Bánh]" Member="T2_Bảng_Bánhs">
+    <Type Name="T2_Bảng_Bánh">
+      <Column Name="[Mã Bánh]" Member="Mã_Bánh" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Tên bánh]" Member="Tên_bánh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Mã LB]" Member="Mã_LB" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Giá" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="T2_Bảng_Bánh_T5_hóa_đơn" Member="T5_hóa_đơns" ThisKey="Mã_Bánh" OtherKey="Mã_Bánh" Type="T5_hóa_đơn" />
+      <Association Name="T1_Bảng_Loại_Bánh_T2_Bảng_Bánh" Member="T1_Bảng_Loại_Bánh" ThisKey="Mã_LB" OtherKey="Mã_LB" Type="T1_Bảng_Loại_Bánh" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[T3_Bảng KH]" Member="T3_Bảng_KHs">
+    <Type Name="T3_Bảng_KH">
+      <Column Name="[Mã KH]" Member="Mã_KH" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Họ tên]" Member="Họ_tên" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Ngày sinh]" Member="Ngày_sinh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[Số ĐT]" Member="Số_ĐT" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="[Địa chỉ]" Member="Địa_chỉ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="T3_Bảng_KH_T5_hóa_đơn" Member="T5_hóa_đơns" ThisKey="Mã_KH" OtherKey="Mã_KH" Type="T5_hóa_đơn" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[T4_Bảng NV]" Member="T4_Bảng_NVs">
+    <Type Name="T4_Bảng_NV">
+      <Column Name="[Mã NV]" Member="Mã_NV" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Họ tên]" Member="Họ_tên" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Ngày sinh]" Member="Ngày_sinh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[Số DT]" Member="Số_DT" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="[Địa chỉ]" Member="Địa_chỉ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Giới Tính]" Member="Giới_Tính" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Chức vụ]" Member="Chức_vụ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="T4_Bảng_NV_T5_hóa_đơn" Member="T5_hóa_đơns" ThisKey="Mã_NV" OtherKey="Mã_NV" Type="T5_hóa_đơn" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[T5_hóa đơn]" Member="T5_hóa_đơns">
+    <Type Name="T5_hóa_đơn">
+      <Column Name="[Mã HĐ]" Member="Mã_HĐ" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Mã NV]" Member="Mã_NV" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Mã KH]" Member="Mã_KH" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Ngày đặt]" Member="Ngày_đặt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[Tổng tiền]" Member="Tổng_tiền" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="[Bánh mua]" Member="Bánh_mua" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Mã Bánh]" Member="Mã_Bánh" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="T2_Bảng_Bánh_T5_hóa_đơn" Member="T2_Bảng_Bánh" ThisKey="Mã_Bánh" OtherKey="Mã_Bánh" Type="T2_Bảng_Bánh" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="T3_Bảng_KH_T5_hóa_đơn" Member="T3_Bảng_KH" ThisKey="Mã_KH" OtherKey="Mã_KH" Type="T3_Bảng_KH" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="T4_Bảng_NV_T5_hóa_đơn" Member="T4_Bảng_NV" ThisKey="Mã_NV" OtherKey="Mã_NV" Type="T4_Bảng_NV" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+</Database>

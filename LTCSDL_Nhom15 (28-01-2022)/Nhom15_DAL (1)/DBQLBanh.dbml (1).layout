@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 16.75" name="DBQLBanh">
+  <DataContextMoniker Name="/DBQLBanhDataContext" />
+  <nestedChildShapes>
+    <classShape Id="4ba92660-eefe-4cf2-a52c-3e841a0cf532" absoluteBounds="3, 4.25, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/DBQLBanhDataContext/BanhCookie" />
+      <nestedChildShapes>
+        <elementListCompartment Id="de69bb92-2e56-4832-9917-0ffc2e40f5f6" absoluteBounds="3.015, 4.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="873ca6b0-c08a-4d53-8d66-2a0547869e25" absoluteBounds="3, 14, 2, 2.5401025390624987">
+      <DataClassMoniker Name="/DBQLBanhDataContext/NhanVien" />
+      <nestedChildShapes>
+        <elementListCompartment Id="253ce740-b2eb-46a9-9b68-2e7a3b43dabe" absoluteBounds="3.015, 14.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="965f41cb-e918-4594-b082-3a328c1b3b3e" absoluteBounds="3, 7.125, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/DBQLBanhDataContext/BanhMan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9367189e-00fd-4e03-92cf-c2e3b2071aaa" absoluteBounds="3.015, 7.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ba021a8e-1bfe-42c5-a32b-dcddf94326b4" absoluteBounds="3, 9.25, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/DBQLBanhDataContext/BanhNgot" />
+      <nestedChildShapes>
+        <elementListCompartment Id="407c7484-7b85-40a4-a359-6ac97ae708d0" absoluteBounds="3.015, 9.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fe595993-2bfd-44e6-9ef0-24ed27833802" absoluteBounds="5.75, 3.5, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/DBQLBanhDataContext/HoaDon" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1478e744-d97f-4265-af99-9a04a55bdb2f" absoluteBounds="5.7650000000000006, 3.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="804ca1e8-3451-471e-9963-1533ed222d79" absoluteBounds="3, 11.375, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/DBQLBanhDataContext/KhachHang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a012b427-0af0-483c-af69-ace2411b8389" absoluteBounds="3.015, 11.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5 : 4.94314697265625); (5.75 : 4.94314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBQLBanhDataContext/BanhCookie/BanhCookie_HoaDon" />
+      <nodes>
+        <classShapeMoniker Id="4ba92660-eefe-4cf2-a52c-3e841a0cf532" />
+        <classShapeMoniker Id="fe595993-2bfd-44e6-9ef0-24ed27833802" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5 : 7.81814697265625); (6.75 : 7.81814697265625); (6.75 : 6.42470540364583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBQLBanhDataContext/BanhMan/BanhMan_HoaDon" />
+      <nodes>
+        <classShapeMoniker Id="965f41cb-e918-4594-b082-3a328c1b3b3e" />
+        <classShapeMoniker Id="fe595993-2bfd-44e6-9ef0-24ed27833802" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5 : 9.94314697265625); (6.2187475 : 9.94314697265625); (6.2187475 : 6.42470540364583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBQLBanhDataContext/BanhNgot/BanhNgot_HoaDon" />
+      <nodes>
+        <classShapeMoniker Id="ba021a8e-1bfe-42c5-a32b-dcddf94326b4" />
+        <classShapeMoniker Id="fe595993-2bfd-44e6-9ef0-24ed27833802" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5 : 15.2700512695312); (7.2812525 : 15.2700512695312); (7.2812525 : 6.42470540364583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBQLBanhDataContext/NhanVien/NhanVien_HoaDon" />
+      <nodes>
+        <classShapeMoniker Id="873ca6b0-c08a-4d53-8d66-2a0547869e25" />
+        <classShapeMoniker Id="fe595993-2bfd-44e6-9ef0-24ed27833802" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5 : 12.3565991210937); (5.95312125 : 12.3565991210937); (5.95312125 : 6.42470540364583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBQLBanhDataContext/KhachHang/KhachHang_HoaDon" />
+      <nodes>
+        <classShapeMoniker Id="804ca1e8-3451-471e-9963-1533ed222d79" />
+        <classShapeMoniker Id="fe595993-2bfd-44e6-9ef0-24ed27833802" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
